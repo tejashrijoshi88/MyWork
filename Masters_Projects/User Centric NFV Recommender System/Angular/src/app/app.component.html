@@ -1,0 +1,26 @@
+ <!-- Author - Tejashri Joshi
+ Date - 10-20-2020
+This file contains the html to show the side bar menus -->
+<head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://bootswatch.com/4/pulse/bootstrap.min.css"></head>
+<ng-sidebar-container>
+    <ng-sidebar #sidebar >
+      <p>Menu Items</p>
+      <button (click)="sidebar.close()">close sidebar</button>
+      <ul class="menu">
+        <li><a routerLink="/Home"(click)="sidebar.close()">Home</a></li>
+        <li><a routerLink="/VNFs" (click)="sidebar.close()">VNFs Performance</a></li> 
+      </ul>
+    </ng-sidebar>
+  
+  <div ng-sidebar-content>
+    <button (click)="sidebar.open()">
+      Sidebar Menu
+    </button>
+    <div class="menu-detail">
+        <router-outlet></router-outlet>
+    </div>
+    
+  </div>
+  </ng-sidebar-container>
+ 

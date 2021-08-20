@@ -1,0 +1,76 @@
+<!-- Author - Tejashri Joshi
+Date - 10-20-2020
+This file contains the html for the page of VNFs performance -->
+
+<form [formGroup]="NFVServiceform" (ngSubmit)="submit()">
+
+    <div class="alert alert-dismissible alert-secondary">
+      <h3 style="text-align: center;">Check Performance of Virtual Network Functions</h3>
+      </div>
+  
+    <div class="form-group">
+      <label for="Scenarios">Scenarios:</label>
+      <select #selectScenario class="custom-select" (change)="changeScenario($event)" formControlName="selectScenario">
+        <option  value="Other" selected >Select Scenario</option>
+        <option *ngFor="let qos of QoSWeightCases">{{qos}}</option>
+        </select>
+    </div>
+    <div class="form-group" >
+      <label for="QoSList">QoSList:</label>
+      <select class="custom-select" (change)="changeQoS($event)" formControlName="selectQoS">
+        <option  value="" selected >Select QoS</option>
+        <option *ngFor="let qos of QoSList">{{qos}}</option>
+        </select>
+        <input type="text" placeholder="Eneter Value" class="form-control"  formControlName="QoSValue" >      
+        <button class="btn btn-outline-primary" type="button" [disabled]="selectScenario.value !='Other'" (click)="addToList()">Add to List</button>
+        <button class="btn btn-outline-primary" type="button"  (click)="clearQoSList()">Clear List</button>
+        <div *ngFor="let qoslist of VNFQoSList">{{qoslist.qosvalue}} {{qoslist.vnfName}}</div>
+    </div>  
+    <hr>
+  <div class="example-container">
+    <h2>List Of VNFs</h2>
+    <input type="text" placeholder="Search VNFs Here" class="form-control"  (input)="searchVNF($event)">
+  <div cdkDropList
+  #todoList="cdkDropList" 
+  [cdkDropListData]="filteredVnf"
+  [cdkDropListConnectedTo]="[doneList]"
+  class="example-list" >
+    <div *ngFor="let item of filteredVnf" cdkDrag >{{item}}</div>
+  </div>
+  </div>
+  <div class="example-container">
+    <h2>Drag VNFs here</h2>
+  <div
+      cdkDropList
+      #doneList="cdkDropList"
+      [cdkDropListData]="done"
+      [cdkDropListConnectedTo]="[todoList]"
+      class="example-list" 
+      (cdkDropListDropped)="drop($event)">
+      <div  *ngFor="let item of done;let i=index" ><button class="btn btn-outline-info" (click)="removeItem(i)"><i class="fa fa-trash"></i></button>{{item}}  </div>
+      <button class="btn btn-outline-primary" type="button"(click)="clearList()">Clear target List</button> 
+    </div>
+  </div>
+  
+  <div class="result" >
+  <div >
+    <label>{{description}}</label>
+  </div>
+  
+  <ngx-gauge [type]="gaugeType" 
+             [value]="NFVRank" 
+             [label]="gaugeLabel"  
+             [prepend]="gaugeAppendText"
+             [min]="min"
+             [max]="max"
+             [thick]='thick'
+             [thresholds]='thresholdConfig'
+             [duration]='duration'>
+  </ngx-gauge>
+  
+    </div>
+  </form>
+  
+  
+  
+  

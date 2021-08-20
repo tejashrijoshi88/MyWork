@@ -1,0 +1,24 @@
+/*  Author - Tejashri Joshi
+ Date - 10-20-2020
+ This file contains style sheet for the side bar menu */
+ng-sidebar-container{
+    height: 100vh;
+}
+::ng-deep .ng-sidebar{
+background-color: white;
+width: 300px;
+padding: 2em, 3em;
+box-shadow: 0 0 2.5em rgba(85, 85, 85, 0.5) ;
+}
+.menu-detail{
+    
+    align-content: center;
+}
+html {
+    font-size: 14px;
+  }
+@media (min-width: 768px) {
+    html {
+      font-size: 16px;
+    }
+  }

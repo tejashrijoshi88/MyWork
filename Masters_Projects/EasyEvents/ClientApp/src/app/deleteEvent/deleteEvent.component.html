@@ -1,0 +1,27 @@
+<!-- File contains HTML show data on delete event page                                       
+Author - Tejashri Joshi                                                                 
+Date   - 12/12/2020     -->
+<h2 style="text-align: center;font-family:Bradley Hand ITC;font-weight:bolder;">Select Event to delete</h2>
+
+<div style="overflow-y: scroll;">
+  <table>
+    <thead>
+      <tr>
+        <th> Name </th>
+        <th> Venue </th>
+        <th> Date </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let event of events;" (click)="highlightEvent(event)"
+        [ngClass]="{'highlight' : event.eventName == selectedEvent}">
+        <td> {{event.eventName}}</td>
+        <td> {{event.venue}}</td>
+        <td> {{event.date}} </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<button class="btn btn-primary btn-lg btn-block" (click)="deleteEvent();">Delete Event</button>
+<div *ngIf="eventError" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+<div *ngIf="eventSuccess" class="alert alert-dismissible alert-success">{{successMessage}}</div>

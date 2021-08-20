@@ -1,0 +1,58 @@
+<!-- File contains HTMl to show data on add events page                                        ****
+**** Author - Tejashri Joshi                                                                   ****
+**** Date   - 12/12/2020                                                                        **** -->
+
+<hr class="center">
+<h1 style="text-align: center;font-family:Bradley Hand ITC;font-weight:bolder;">Add Event</h1>
+<div class="card">
+  <div class="card-body">
+
+    <form [formGroup]="eventForm" (ngSubmit)="postData();">
+      <div class="form-group">
+        <label for="eventName">Event Name</label>
+        <input type="text" placeholder="Name" class="form-control" id="eventName" formControlName="eventName">
+        <span *ngIf="eventForm.get('eventName').touched && eventForm.get('eventName').hasError('required')">
+          Enter
+          event name
+        </span>
+      </div>
+      <div class="form-group">
+        <label for="description">Event Description</label>
+        <input type="text" placeholder="description" class="form-control" id="description"
+          formControlName="description">
+
+      </div>
+      <div class="form-group">
+        <label for="EventType">EventType</label>
+        <select #selectEventType class="custom-select" (change)="changeEventType($event)" formControlName="EventType">
+          <option value="Select EventType" selected>Select EventType</option>
+          <option *ngFor="let event of eventtypes">{{event.eventTypeName}}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="venue">venue</label>
+        <select #selectVenue class="custom-select" (change)="changeVenue(event)" formControlName="venue">
+          <option value="Select Venue" selected>Select Venue</option>
+          <option *ngFor="let venue of venues">{{venue.venueName}}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="Datetime">Date</label>
+        <input type="date" placeholder="DateTime" class="form-control" id="Datetime" formControlName="Datetime">
+      </div>
+      <div class="form-group">
+        <label for="timing">Time</label>
+        <input type="timing" placeholder="timing" class="form-control" id="timing" formControlName="timing">
+      </div>
+
+      <button type="submit" class="btn btn-primary"
+        [disabled]="!eventForm.valid || selectVenue.value =='Select Venue'||selectEventType.value =='Select EventType'">
+        Create Event</button>
+
+    </form>
+    <button class="btn btn-primary" (click)="resetForm();">Reset Values</button>
+    <div *ngIf="eventError" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+    <div *ngIf="eventSuccess" class="alert alert-dismissible alert-success">{{successMessage}}</div>
+
+  </div>
+</div>

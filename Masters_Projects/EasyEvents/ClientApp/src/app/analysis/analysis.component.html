@@ -1,0 +1,27 @@
+<!-- File contains HTML show data on analysis page                                       
+Author - Tejashri Joshi                                                                 
+Date   - 12/12/2020     -->
+
+<h1 style="text-align: center;font-family:Bradley Hand ITC;font-weight:bolder;">Event Analysis</h1>
+<div class="form-group">
+
+  <select #selectEvent class="custom-select">
+    <option value="Select Event" selected>Select Event</option>
+    <option *ngFor="let event of events">{{event.eventName}}</option>
+  </select>
+  <button class="btn btn-primary" (click)="GetEventData(selectEvent.value);">Show Analysis</button>
+
+  <div *ngIf="showData" style="text-align: center;">Registration Count - {{eventdata.registrationCount}} Attendance
+    Count - {{eventdata.attendedCount}}</div>
+</div>
+<hr>
+<h2 style="text-align: center;font-family:Bradley Hand ITC;font-weight:bolder;">Event By registration count</h2>
+<div class="card">
+  <div class="card-body">
+    <div *ngIf="barChartLabels.length > 0" style="display: block;" class="chart-wrapper">
+      <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [colors]="barChartColors"
+        [options]="barChartOptions" [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+      </canvas>
+    </div>
+  </div>
+</div>
