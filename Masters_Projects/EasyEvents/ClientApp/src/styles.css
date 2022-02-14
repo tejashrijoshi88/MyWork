@@ -1,0 +1,34 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+}
+
+.card {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+table {
+  width: 100%;
+  font: 14px Verdana;
+}
+table, th, td {
+  border: solid 1px #999999;
+  border-collapse: collapse;
+  padding: 2px 3px;
+  text-align: center;
+}
+th {
+  font-weight: bold;
+}
+
+table tr.highlight {
+  background-color:green !important;
+  color: #ffffff;
+}

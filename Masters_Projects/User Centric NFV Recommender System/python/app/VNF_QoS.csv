@@ -1,0 +1,60 @@
+vRouter,Response Time,0,1,0,0,0,0
+vRouter,Availability,0,0,0,1,0,1
+vRouter,Throughput,0,0,1,0,0,1
+vRouter,Reliability,0,0,0,0,1,1
+vRouter,Latency,1,0,0,0,0,0
+vSwitch,Response Time,0,1,0,0,0,0
+vSwitch,Availability,0,0,0,1,0,1
+vSwitch,Throughput,0,0,1,0,0,1
+vSwitch,Reliability,0,0,0,0,1,1
+vSwitch,Latency,1,0,0,0,0,0
+vFirewall,Response Time,0,1,0,0,0,0
+vFirewall,Availability,0,0,0,1,0,1
+vFirewall,Throughput,0,0,1,0,0,1
+vFirewall,Reliability,0,0,0,0,1,1
+vFirewall,Latency,1,0,0,0,0,0
+vNAT,Response Time,0,1,0,0,0,0
+vNAT,Availability,0,0,0,1,0,1
+vNAT,Throughput,0,0,1,0,0,1
+vNAT,Reliability,0,0,0,0,1,1
+vNAT,Latency,1,0,0,0,0,0
+vDNS,Response Time,0,1,0,0,0,0
+vDNS,Availability,0,0,0,1,0,1
+vDNS,Throughput,0,0,1,0,0,1
+vDNS,Reliability,0,0,0,0,1,1
+vDNS,Latency,1,0,0,0,0,0
+vLoadBalancer,Response Time,0,1,0,0,0,0
+vLoadBalancer,Availability,0,0,0,1,0,1
+vLoadBalancer,Throughput,0,0,1,0,0,1
+vLoadBalancer,Reliability,0,0,0,0,1,1
+vLoadBalancer,Latency,1,0,0,0,0,0
+vGateway,Response Time,0,1,0,0,0,0
+vGateway,Availability,0,0,0,1,0,1
+vGateway,Throughput,0,0,1,0,0,1
+vGateway,Reliability,0,0,0,0,1,1
+vGateway,Latency,1,0,0,0,0,0
+vEPC,Response Time,0,1,0,0,0,0
+vEPC,Availability,0,0,0,1,0,1
+vEPC,Throughput,0,0,1,0,0,1
+vEPC,Reliability,0,0,0,0,1,1
+vEPC,Latency,1,0,0,0,0,0
+vBNG,Response Time,0,1,0,0,0,0
+vBNG,Availability,0,0,0,1,0,1
+vBNG,Throughput,0,0,1,0,0,1
+vBNG,Reliability,0,0,0,0,1,1
+vBNG,Latency,1,0,0,0,0,0
+vG_Mux,Response Time,0,1,0,0,0,0
+vG_Mux,Availability,0,0,0,1,0,1
+vG_Mux,Throughput,0,0,1,0,0,1
+vG_Mux,Reliability,0,0,0,0,1,1
+vG_Mux,Latency,1,0,0,0,0,0
+vDHCP,Response Time,0,1,0,0,0,0
+vDHCP,Availability,0,0,0,1,0,1
+vDHCP,Throughput,0,0,1,0,0,1
+vDHCP,Reliability,0,0,0,0,1,1
+vDHCP,Latency,1,0,0,0,0,0
+vAAA,Response Time,0,1,0,0,0,0
+vAAA,Availability,0,0,0,1,0,1
+vAAA,Throughput,0,0,1,0,0,1
+vAAA,Reliability,0,0,0,0,1,1
+vAAA,Latency,1,0,0,0,0,0

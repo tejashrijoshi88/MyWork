@@ -1,0 +1,22 @@
+<!-- //File contains html to show on menues as per user role                                     
+//Author - Tejashri Joshi                                                                 
+//Date   - 12/12/2020     --> -->
+<head><link rel="stylesheet" href="https://bootswatch.com/4/pulse/bootstrap.min.css">
+  
+</head>
+
+<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
+  <div class="navbar-nav">
+      <a class="nav-item nav-link" routerLink="/">Home</a>
+      <a class="nav-item nav-link" routerLink="/admin" *ngIf="isAdmin">Admin</a>
+      <a class="nav-item nav-link" routerLink="/analysis" *ngIf="isAdmin">Analysis</a>
+      <a class="nav-item nav-link" routerLink="/events" *ngIf="isUser">My Events</a>
+      <a class="nav-item nav-link" routerLink="/eventCheckin"  *ngIf="isUser">Event Checkin</a>
+      <a class="nav-item nav-link" (click)="logout()">Logout</a>
+  </div>
+</nav>
+
+<!-- main app container -->
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,60 @@
+3321.4,89,1.4,73,2.6,vRouter,Consectetuer Associates
+482,85,16,73,1,vSwitch,Consectetuer Associates
+302.75,89,7.1,73,187.75,vFirewall,Consectetuer Associates
+126.17,98,12,67,22.77,vNAT,Consectetuer Associates
+107,87,1.9,73,58.33,vDNS,Consectetuer Associates
+107.57,80,1.7,67,18.21,vLoadBalancer,Consectetuer Associates
+255,98,1.3,67,40.8,vGateway,Consectetuer Associates
+136.71,76,2.8,60,11.57,vEPC,Consectetuer Associates
+102.62,91,15.3,67,0.93,vBNG,Consectetuer Associates
+93.37,96,13.5,67,41.66,vG_Mux,Consectetuer Associates
+133,86,7.7,73,10.67,vDHCP,Consectetuer Associates
+221.48,90,10.9,53,37.26,vAAA,Consectetuer Associates
+114,86,16.1,73,67,vRouter,Donec LLP
+269.83,85,4.5,53,74.96,vSwitch,Donec LLP
+134.07,84,12.2,60,8.21,vFirewall,Donec LLP
+67.5,86,6,73,1.5,vNAT,Donec LLP
+131.57,80,2.3,53,6.5,vDNS,Donec LLP
+213.2,88,1.6,73,7.8,vLoadBalancer,Donec LLP
+1360,83,10.4,83,3,vGateway,Donec LLP
+108,86,0.7,73,0.33,vEPC,Donec LLP
+50,72,13.3,73,4,vBNG,Donec LLP
+1069.5,71,3,83,744,vG_Mux,Donec LLP
+132,83,14.3,73,16,vDHCP,Donec LLP
+265.09,94,10.2,73,48.18,vAAA,Donec LLP
+124.17,94,2.1,73,30.84,vRouter,Risus Duis A Inc.
+408.21,56,5,73,121.46,vSwitch,Risus Duis A Inc.
+259,97,1.2,58,7.2,vFirewall,Risus Duis A Inc.
+408,83,15.2,83,3,vNAT,Risus Duis A Inc.
+173,46,3.8,78,4.83,vDNS,Risus Duis A Inc.
+320.48,86,1.2,53,125.18,vLoadBalancer,Risus Duis A Inc.
+115,96,28,73,1,vGateway,Risus Duis A Inc.
+149.67,89,1.1,73,13,vEPC,Risus Duis A Inc.
+672.2,91,7.9,73,9.2,vBNG,Risus Duis A Inc.
+59.58,77,8.8,67,3.95,vG_Mux,Risus Duis A Inc.
+499,83,19.7,83,31,vDHCP,Risus Duis A Inc.
+1334,100,8.3,73,89,vAAA,Risus Duis A Inc.
+229.75,86,10.1,73,87.75,vRouter,Sapien Consulting
+266.83,36,0.9,60,15.91,vSwitch,Sapien Consulting
+49.43,42,10.6,73,6,vFirewall,Sapien Consulting
+64.96,18,4.3,60,5.15,vNAT,Sapien Consulting
+106.75,90,16.2,73,24.13,vDNS,Sapien Consulting
+580.5,72,4.4,67,19,vLoadBalancer,Sapien Consulting
+205,73,1.4,58,12,vGateway,Sapien Consulting
+294.5,87,14.5,73,66,vEPC,Sapien Consulting
+113.25,88,1.7,53,43.25,vBNG,Sapien Consulting
+68.91,19,4.4,60,5.91,vG_Mux,Sapien Consulting
+184.67,73,2.7,73,40.84,vDHCP,Sapien Consulting
+3347,83,5.6,83,2,vAAA,Sapien Consulting
+142.5,93,4.4,73,26.75,vRouter,Hendrerit Inc.
+451,23,1.8,42,334.1,vSwitch,Hendrerit Inc.
+269.09,85,3.9,53,84.92,vFirewall,Hendrerit Inc.
+227,88,21.2,73,23,vNAT,Hendrerit Inc.
+511.25,77,4.7,73,269.25,vDNS,Hendrerit Inc.
+173,67,0.5,73,1.67,vLoadBalancer,Hendrerit Inc.
+645,86,8,73,86.5,vGateway,Hendrerit Inc.
+300.12,90,7.9,67,14.88,vEPC,Hendrerit Inc.
+1035,71,8.4,73,6,vBNG,Hendrerit Inc.
+515.2,86,9.2,73,8.8,vG_Mux,Hendrerit Inc.
+430.5,40,3.3,73,13.25,vDHCP,Hendrerit Inc.
+205.33,90,3.5,60,48.33,vAAA,Hendrerit Inc.

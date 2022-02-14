@@ -1,0 +1,61 @@
+<!-- File contains HTML show data on home page                                       
+Author - Tejashri Joshi                                                                 
+Date   - 12/12/2020     -->
+<h1 style="text-align: center;font-family:Bradley Hand ITC;font-weight:bolder;">Welcome {{currentUser.firstName}}
+  {{currentUser.lastName}}</h1>
+<div class="form-group">
+  <label for="EventType">EventType</label>
+  <select #selectEventType class="custom-select">
+    <option value="Select EventType" selected>Select EventType</option>
+    <option *ngFor="let event of eventtypes">{{event.eventTypeName}}</option>
+  </select>
+  <button class="btn btn-primary" (click)="GetEventsByType(selectEventType.value);">Show Events By Event Type</button>
+</div>
+<div class="form-group">
+  <label for="EventName">EventName</label>
+  <input id="selectEventName" type="EventName" placeholder="EventName" class="form-control">
+  <button class="btn btn-primary" (click)="GetEventsByName();">Show Events By Event Name</button>
+</div>
+<div>
+  <button class="btn btn-primary" (click)="ClearFiler();">Clear Filter</button>
+</div>
+<hr>
+<button class="btn btn-primary" (click)="ShowHolidays();">Show HolidayList</button>
+<div *ngIf="showHoliday" class="alert alert-dismissible alert-info">Holiday List for Year 2020
+  <div *ngFor="let holiday of holidays">{{holiday.date}} {{holiday.localName}}</div>
+</div>
+<div>
+  <button class="btn btn-primary" (click)="CheckWeather();">Check Weather on Event Day</button>
+  <div *ngIf="checkWeatherFlag" class="alert alert-dismissible alert-info">Weather on Event Day - {{weather.weather}}
+  </div>
+</div>
+<hr>
+<h2 style="text-align: center;font-family:Bradley Hand ITC;font-weight:bolder;">All Events</h2>
+<hr>
+<div style="overflow-y: scroll;">
+  <table>
+    <thead>
+      <tr>
+        <th> Name </th>
+        <th> Venue </th>
+        <th> Date </th>
+        <th> Time </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let event of events;" (click)="highlightEvent(event)"
+        [ngClass]="{'highlight' : event.eventName == selectedEvent}">
+        <td> {{event.eventName}}</td>
+        <td> {{event.venue}}</td>
+        <td> {{event.date}} </td>
+        <td> {{event.time}} </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+<hr>
+<button class="btn btn-primary btn-lg btn-block" *ngIf="isUser" (click)="registerEvent();">Register for Event</button>
+<div *ngIf="eventError" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+<div *ngIf="eventSuccess" class="alert alert-dismissible alert-success">{{successMessage}}{{rfid.rfid}}</div>
+<hr>

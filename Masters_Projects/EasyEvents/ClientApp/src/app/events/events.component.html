@@ -1,0 +1,58 @@
+<!-- File contains HTML show data on my events page                                      
+Author - Tejashri Joshi                                                                 
+Date   - 12/12/2020     -->
+<hr class="center">
+<h1 style="text-align: center;font-family:Bradley Hand ITC;font-weight:bolder;">Welcome {{currentUser.firstName}}
+  {{currentUser.lastName}}</h1>
+<h2 style="text-align: center;font-family:Bradley Hand ITC;font-weight:bolder;">Upcoming Events</h2>
+<div style="overflow-y: scroll;">
+  <table>
+    <thead>
+      <tr>
+        <th> Name </th>
+        <th> Venue </th>
+        <th> Date </th>
+        <th> Time </th>
+        <th> RFID tag </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let event of futureEvents;" (click)="highlightFutureEvent(event)"
+        [ngClass]="{'highlight' : event.eventName == selectedFutureEvent}">
+        <td> {{event.eventName}}</td>
+        <td> {{event.venue}}</td>
+        <td> {{event.date}} </td>
+        <td> {{event.time}} </td>
+        <td> {{event.rfid}} </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div *ngIf="isFuture">
+  <button class="btn btn-primary btn-lg btn-block" (click)="unsubscribeEvent();">Unsubscribe Event</button>
+  <div *ngIf="eventError" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+  <div *ngIf="eventSuccess" class="alert alert-dismissible alert-success">{{successMessage}}</div>
+</div>
+<h2 style="text-align: center;font-family:Bradley Hand ITC;font-weight:bolder;">Past Events</h2>
+<div style="overflow-y: scroll;">
+  <table>
+    <thead>
+      <tr>
+        <th> Name </th>
+        <th> Venue </th>
+        <th> Date </th>
+        <th> Time </th>
+        <th> RFID tag </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let event of pastEvents;" (click)="selectPastEvent(event)">
+        <td> {{event.eventName}}</td>
+        <td> {{event.venue}}</td>
+        <td> {{event.date}} </td>
+        <td> {{event.time}} </td>
+        <td> {{event.rfid}} </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

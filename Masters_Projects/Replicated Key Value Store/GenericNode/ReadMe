@@ -1,0 +1,71 @@
+Environment:-
+Language: Java 8
+IDE: Eclipse
+Project : Maven 3.5
+
+Implemented Method: DF+U-2 Static file + UDP membership tracking.		
+
+How to Build and Run maven Project:
+
+1. Go to project folder.		
+2. Run "mvn clean install" command.It'll create 'GenericNode.jar' file under target folder.
+
+	For eg. C:\Users\surbhi\eclipse-workspace\GenericNode >mvn clean install
+	
+3. To run jar file :
+	1. Go to target folder and run "java -jar GenericNode.jar ts 1234"
+	   For eg. C:\Users\surbhi\eclipse-workspace\GenericNode\target >java -jar GenericNode.jar ts 1234
+
+To run the project for UDP Discovery Tracking Method:
+
+1. Extract the project from tar gzip file
+2. Open project in Eclipse
+3. Open GenericNode.java from GenericNode\src\main\java\distributedSystem\keyvaluestore
+4. Uncomment the try-catch block with broadcast_server.BroadCast() mentioned in lines 35 -39.
+ 
+			try {
+				System.out.println("Broadcast call");
+				broadcast_server.BroadCast();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+ 
+5. Save the GenericNode.java file with the above edit.
+6. Open Coordinator.java from GenericNode\src\main\java\distributedSystem\keyvaluestore
+7. Comment out StaticConfig.config(); mentioned in line number 34.
+
+			//to start static configuration
+			//StaticConfig.config();
+			
+8. Save the Coordinator.java file with the above edit.
+9. Build and Run project using above mentioned note "How to Build maven Project:" 
+
+
+To run the project for Static Configuration approach :
+Change need to be made in code:-
+1. Extract the project from tar gzip file
+2. Open project in Eclipse
+3. Open GenericNode.java from GenericNode\src\main\java\distributedSystem\keyvaluestore
+4. Comment out the try-catch block with broadcast_server.BroadCast() mentioned in lines 35 -39.
+ 
+			/*try {
+				System.out.println("Broadcast call");
+				broadcast_server.BroadCast();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}*/
+ 
+5. Save the GenericNode.java file with the above edit.
+6. Open Coordinator.java from GenericNode\src\main\java\distributedSystem\keyvaluestore
+7. Uncomment out StaticConfig.config(); mentioned in line number 34.
+
+			//to start static configuration
+			StaticConfig.config();
+			
+8. Save the Coordinator.java file with the above edit.
+9. Build and Run project using above mentioned note "How to Build maven Project:" 
+
+Steps needed to run the static configuration file:- 
+update_nodes.sh is given in the docker_server folder.
+1. Build the server container
+2. Run the command nohup ./update_nodes.sh <docker_image>&

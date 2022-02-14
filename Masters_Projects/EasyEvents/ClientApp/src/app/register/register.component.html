@@ -1,0 +1,89 @@
+<!-- File contains HTML show data on log in page                                       
+Author - Tejashri Joshi                                                                 
+Date   - 12/12/2020     -->
+
+<img src="assets/img/logo1.png" class="center">
+<hr class="center">
+<h1 style="text-align: center;font-family:Bradley Hand ITC;font-weight:bolder;">Registration Form</h1>
+<div class="card">
+  <div class="card-body">
+
+    <form [formGroup]="registrationForm" (ngSubmit)="postData();">
+      <div class="form-group">
+        <label for="emailId">EmailId</label>
+        <input type="text" placeholder="Email" class="form-control" id="emailId" formControlName="emailId">
+        <span
+          *ngIf="registrationForm.get('emailId').touched && registrationForm.controls.emailId.errors?.emailValidity;">Invalid
+          Email</span>
+      </div>
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" placeholder="First Name" class="form-control" id="firstName" formControlName="firstName">
+
+      </div>
+      <div class="form-group">
+        <label for="lasttName">Last Name</label>
+        <input type="text" placeholder="Last Name" class="form-control" id="lastName" formControlName="lastName">
+
+      </div>
+      <div class="form-group">
+        <label for="gender">gender</label>
+        <input type="text" placeholder="gender" class="form-control" id="gender" formControlName="gender">
+
+      </div>
+      <div class="form-group">
+        <label for="age">age</label>
+        <input type="text" placeholder="age" class="form-control" id="age" formControlName="age">
+
+      </div>
+      <div class="form-group">
+        <label for="userName">userName</label>
+        <input type="text" placeholder="UserName" class="form-control" id="userName" formControlName="userName">
+        <span
+          *ngIf="registrationForm.get('userName').touched && registrationForm.get('userName').hasError('minlength');">Minimum
+          6 characters required</span>
+
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <label for="desc">(Must contain an uppercase,a special character,a number)</label>
+        <input type="password" placeholder="password" class="form-control" id="exampleInputPassword1"
+          formControlName="password">
+
+        <span
+          *ngIf="registrationForm.get('password').touched &&registrationForm.controls.password.errors?.passwordValidity; else ElseBlock">Enter
+          Valid password</span>
+        <ng-template #ElseBlock>
+          <span
+            *ngIf="registrationForm.get('password').touched && registrationForm.get('password').hasError('required')">Enter
+            password</span>
+          <span
+            *ngIf="registrationForm.get('password').touched && registrationForm.get('password').hasError('minlength')">Minimum
+            8 characters required</span>
+          <span
+            *ngIf="registrationForm.get('password').touched && registrationForm.get('password').hasError('maxlength')">Maximum
+            15 characters accepted</span>
+        </ng-template>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword2">Confirm Password</label>
+        <input type="password" placeholder="Re-enter Password" class="form-control" id="exampleInputPassword2"
+          formControlName="confirmPassword">
+        <span
+          *ngIf="registrationForm.get('confirmPassword').touched &&registrationForm.get('confirmPassword').hasError('required')">Re-enter
+          password</span>
+        <span
+          *ngIf="registrationForm.get('confirmPassword').touched &&registrationForm.controls.confirmPassword.errors?.mustMatch">Password
+          should be same as Confirm password</span>
+
+      </div>
+
+      <button type="submit" class="btn btn-primary" [disabled]="!registrationForm.valid">Register User</button>
+
+    </form>
+    <button type="Cancel" class="btn btn-primary" (click)="resetForm();">Reset Form</button>
+    <div *ngIf="registrationError" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+    <hr>
+    <button type="button" class="btn btn-link" (click)="Redirectlogin()">LogIn Here if already Registered</button>
+  </div>
+</div>
